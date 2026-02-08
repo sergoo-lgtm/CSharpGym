@@ -26,3 +26,4 @@
 /Users/yousef/My-Repos/C#Gym/CSharpGym/CSharpGym/obj/Debug/net10.0/CSharpGym.pdb
 /Users/yousef/My-Repos/C#Gym/CSharpGym/CSharpGym/obj/Debug/net10.0/CSharpGym.genruntimeconfig.cache
 /Users/yousef/My-Repos/C#Gym/CSharpGym/CSharpGym/obj/Debug/net10.0/ref/CSharpGym.dll
+/Users/yousef/My-Repos/C#Gym/CSharpGym/CSharpGym/obj/Debug/net10.0/CSharpGym.sourcelink.json

@@ -10,10 +10,9 @@ namespace CSharpGym
     {
         static void Main(string[] args)
         {
-            // 1. تجميع كل الحلول باستخدام Reflection
+            
             var challenges = LoadChallenges();
 
-            // === 🛑 التعديل هنا: لو مفيش أسئلة، استنى اليوزر يدوس زرار ===
             if (challenges.Count == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -26,11 +25,10 @@ namespace CSharpGym
                 Console.ResetColor();
                 
                 Console.WriteLine("\n👉 Press any key to exit...");
-                Console.ReadKey(); // هنا البرنامج هيقف مستنيك
+                Console.ReadKey(); 
                 return;
             }
 
-            // 2. القائمة الرئيسية (Loop 1)
             while (true)
             {
                 Console.Clear();
@@ -59,7 +57,6 @@ namespace CSharpGym
 
                 if (selectedLevel.HasValue)
                 {
-                    // الدخول للقائمة الفرعية
                     ShowLevelMenu(challenges, selectedLevel.Value);
                 }
                 else
@@ -69,13 +66,11 @@ namespace CSharpGym
             }
         }
 
-        // القائمة الفرعية لعرض أسئلة مستوى معين (Loop 2)
         static void ShowLevelMenu(List<IChallenge> allChallenges, Difficulty level)
         {
-            // فلترة الأسئلة حسب المستوى المختار
             var levelChallenges = allChallenges
                 .Where(c => c.Level == level)
-                .OrderBy(c => c.GetType().Name) // الترتيب حسب اسم الملف
+                .OrderBy(c => c.GetType().Name) 
                 .ToList();
 
             while (true)
@@ -90,7 +85,7 @@ namespace CSharpGym
                     Console.WriteLine("\n[0] Back to Main Menu");
                     
                     Console.Write("\n👉 Press 0 to go back: ");
-                    Console.ReadLine(); // مستني تدوس انتر عشان يرجع
+                    Console.ReadLine();
                     return;
                 }
                 else
@@ -107,7 +102,7 @@ namespace CSharpGym
                 
                 string choice = Console.ReadLine();
 
-                if (choice == "0") return; // الرجوع للقائمة الرئيسية
+                if (choice == "0") return; 
 
                 if (int.TryParse(choice, out int index) && index > 0 && index <= levelChallenges.Count)
                 {
@@ -154,7 +149,7 @@ namespace CSharpGym
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"\n❌ {message}");
             Console.ResetColor();
-            System.Threading.Thread.Sleep(1000); // يستنى ثانية عشان تقرأ الخطأ
+            System.Threading.Thread.Sleep(1000); 
         }
     }
 }
