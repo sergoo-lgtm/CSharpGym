@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpGym")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d8926331617de0c4a3f2caa4071a39e96d9cfbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e41667248b43c5d701c5717f92048567285a55a")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpGym")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpGym")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
