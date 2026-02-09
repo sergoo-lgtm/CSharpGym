@@ -6,11 +6,9 @@ namespace CSharpGym.Solutions.Level1_Easy
 {
     public class Challenge001_CheckNegative : IChallenge
     {
-        // 1. البيانات التعريفية للسؤال
         public string ChallengeName => "Check for Negative Numbers";
-        public Difficulty Level => Difficulty.Easy; // حدد المستوى هنا
+        public Difficulty Level => Difficulty.Easy; 
 
-        // 2. كود الحل
         public void Run()
         {
             Console.WriteLine("Enter a list of numbers separated by comma (e.g. 5, -1, 3):");
@@ -18,15 +16,22 @@ namespace CSharpGym.Solutions.Level1_Easy
 
             if (string.IsNullOrWhiteSpace(input)) return;
 
-            // اللوجيك
-            var numbers = input.Split(',').Select(int.Parse).ToArray();
-            bool hasNegative = numbers.Any(n => n < 0);
+            List<int> checkedList = input
+                .Split(',')
+                .Select(s => int.Parse(s.Trim()))
+                .ToList();
+            var negative = checkedList.Where(n => n < 0);
+            if(checkedList.Any(n=>n<0))
+            {
+                Console.WriteLine("List have negative numbers.");
+                foreach(var n in negative)  Console.Write(n+" ,");
+            }
 
-            // النتيجة
-            if (hasNegative)
-                Console.WriteLine("✅ Result: The list contains negative numbers.");
-            else
-                Console.WriteLine("❌ Result: No negative numbers found.");
+            else 
+            {
+                Console.WriteLine("List doesn't has negative number.");
+            }
+
         }
     }
 }
